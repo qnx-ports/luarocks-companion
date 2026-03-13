@@ -3,7 +3,7 @@
 # Maintainer: Aaron Bassett <abassett@qnx.com>
 pkgname=luarocks
 pkgver=3.12.2
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="Deployment and management system for Lua modules"
 url="https://luarocks.org/"
 arch="noarch"
@@ -75,6 +75,7 @@ _subpackage() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 a1182c5f0ba87841014bb8063c170968659e35339d559a56fe8eb007ebfbe0ce356e4c4341bbfe4279986d9ca10f04a38e3fdbc80223251526d2de34b2849cc5  luarocks-3.12.2.tar.gz
 02bcbe5715d1cf5f4c317e7a83542afa08a548fc55574ab9de0cd7f72a84a6288801a87da580165cb27dcf89455b9c0dc99567430423fc5c0a8ce98ead838275  prefer-curl-to-wget.patch
